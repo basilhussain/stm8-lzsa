@@ -1,0 +1,6 @@
+The actual drive capabilities of ISA motherboards can vary greatly.
+The IEEE P996 specs 1.0 offers these guidelines:
+   +12V at 1.5A
+   -12V at 0.3A
+    +5V at 4.5A
+    -5V at 0.2A
