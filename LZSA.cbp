@@ -62,17 +62,23 @@
 		<Unit filename="lzsa.h" />
 		<Unit filename="lzsa1.s">
 			<Option compilerVar="CC" />
-			<Option compiler="sdcc" use="1" buildCommand='${TARGET_COMPILER_DIR}bin\sdasstm8.exe -ff -w -l -p -o &quot;$object&quot; &quot;$file_name_${MODEL}.s&quot; &quot;$file&quot;' />
+			<Option compiler="sdcc" use="1" buildCommand='${TARGET_COMPILER_DIR}bin\sdasstm8.exe -ff -w -l -p -o &quot;$object&quot; &quot;lzsa_${MODEL}.s&quot; &quot;$file&quot;' />
 			<Option target="Library (Medium)" />
 			<Option target="Library (Large)" />
 		</Unit>
-		<Unit filename="lzsa1_large.s">
+		<Unit filename="lzsa2.s">
+			<Option compilerVar="CC" />
+			<Option compiler="sdcc" use="1" buildCommand='${TARGET_COMPILER_DIR}bin\sdasstm8.exe -ff -w -l -p -o &quot;$object&quot; &quot;lzsa_${MODEL}.s&quot; &quot;$file&quot;' />
+			<Option target="Library (Medium)" />
+			<Option target="Library (Large)" />
+		</Unit>
+		<Unit filename="lzsa_large.s">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
 			<Option target="Library (Large)" />
 		</Unit>
-		<Unit filename="lzsa1_medium.s">
+		<Unit filename="lzsa_medium.s">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
@@ -87,6 +93,19 @@
 		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="tests.c">
+			<Option compilerVar="CC" />
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="tests.h">
+			<Option target="Test" />
+		</Unit>
+		<Unit filename="tests/tests_data.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 			<Option target="Test" />
 		</Unit>
 		<Unit filename="uart.c">

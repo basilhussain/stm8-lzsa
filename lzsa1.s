@@ -156,7 +156,7 @@ lzsa1_copy_lit:
 	ld (y), a
 	incw y
 
-	; Loop around to next byte (if any remain).
+	; Loop around to next byte.
 	jra lzsa1_copy_lit_loop
 
 lzsa1_no_lit:
@@ -204,8 +204,8 @@ lzsa1_got_match_off:
 	; was 238 (two more bytes).
 	add a, (x)
 	incw x
-	tnz a
 	jrnc lzsa1_small_match_len
+	tnz a
 	jrne lzsa1_medium_match_len
 
 	; Load two more bytes and set as match length word variable, converting from
@@ -227,7 +227,6 @@ lzsa1_got_match_off:
 	; Return current destination pointer in X reg.
 	ldw x, y
 	return
-	; ret
 
 lzsa1_medium_match_len:
 	; Load second match length byte. Add 256 to it by setting MSB of match
@@ -276,11 +275,10 @@ lzsa1_copy_match:
 	ld (y), a
 	incw y
 
-	; Loop around to next byte (if any remain).
+	; Loop around to next byte.
 	jra lzsa1_copy_match_loop
 
 lzsa1_no_match:
 	; Restore source pointer from stack. Proceed to next token.
 	popw x
 	jump_abs lzsa1_token
-	; jp lzsa1_token

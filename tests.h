@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- * lzsa.h - Header for LZSA decompression library
+ * tests.h - Header for test corpus
  *
  * Copyright (c) 2021 Basil Hussain
  *
@@ -24,13 +24,31 @@
  *
  ******************************************************************************/
 
-#ifndef LZSA_H_
-#define LZSA_H_
+#ifndef TESTS_H_
+#define TESTS_H_
 
 #include <stddef.h>
 #include <stdint.h>
 
-extern void * lzsa1_decompress_block(void *dst, const void *src);
-extern void * lzsa2_decompress_block(void *dst, const void *src);
+#define TESTS_COUNT 11
+#define TESTS_DATA_PLAIN_MAX_LEN 1700
+#define TESTS_DATA_LZSA_MAX_LEN 1200
 
-#endif // LZSA_H_
+typedef struct {
+	struct {
+		size_t length;
+		uint8_t *data;
+	} plain;
+	struct {
+		size_t length;
+		uint8_t *data;
+	} lzsa1;
+	struct {
+		size_t length;
+		uint8_t *data;
+	} lzsa2;
+} test_case_t;
+
+extern const test_case_t tests[TESTS_COUNT];
+
+#endif // TESTS_H_

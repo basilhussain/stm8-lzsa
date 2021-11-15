@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- * lzsa_ref.h - Header for reference LZSA decompression implementation
+ * lzsa_ref.h - Header for reference LZSA decompression implementations
  *
  * Copyright (c) 2021 Basil Hussain
  *
@@ -31,5 +31,6 @@
 #include <stdint.h>
 
 extern void * lzsa1_decompress_block_ref(void *dst, const void *src);
+extern void * lzsa2_decompress_block_ref(void *dst, const void *src);
 
 #endif // LZSA_REF_H_

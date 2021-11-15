@@ -1,9 +1,9 @@
 ; ------------------------------------------------------------------------------
-; LZSA1 BLOCK DECOMPRESSION FOR STM8
+; LZSA BLOCK DECOMPRESSION FOR STM8
 ; ------------------------------------------------------------------------------
 ;
-; lzsa1_medium.s - Medium memory model specific definitions and macros for LZSA1
-;                  decompression routine
+; lzsa_medium.s - Medium memory model specific definitions and macros for LZSA
+;                 decompression routines
 ;
 ; Copyright (c) 2021 Basil Hussain
 ;
@@ -31,6 +31,10 @@
 ; version of ASxxxx assembler (as of SDCC v4.1) doesn't support .define!
 
 ARGS_SP_OFFSET .equ 3
+
+.macro call_abs lbl
+	call lbl
+.endm
 
 .macro jump_abs lbl
 	jp lbl
