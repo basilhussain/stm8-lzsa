@@ -95,8 +95,8 @@ To benchmark the decompression routines, the execution speed was compared with t
 
 | Function               | Reference C Cycles | Library ASM Cycles | Ratio |
 | ---------------------- | -----------------: | -----------------: | ----: |
-| lzsa1_decompress_block |          7,126,316 |          3,767,710 |   53% |
-| lzsa2_decompress_block |         10,472,316 |          4,599,610 |   44% |
+| lzsa1_decompress_block |          7,467,917 |          4,266,210 |   57% |
+| lzsa2_decompress_block |         11,231,917 |          5,345,110 |   48% |
 
 The above benchmark was run using the [μCsim](http://mazsola.iit.uni-miskolc.hu/~drdani/embedded/ucsim/) microcontroller simulator included with SDCC, and measurements were obtained using the timer commands of the simulator.
 
