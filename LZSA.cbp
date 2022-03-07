@@ -50,6 +50,7 @@
 			</Target>
 			<Environment>
 				<Variable name="MCU" value="STM8S208RB" />
+				<Variable name="PORT" value="COM14" />
 			</Environment>
 		</Build>
 		<VirtualTargets>
